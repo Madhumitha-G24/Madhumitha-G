@@ -389,3 +389,46 @@ footer {
   padding: 20px;
   color: #888;
 }
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #00f5d4;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav ul.nav-links {
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    display: none;
+    padding: 20px 0;
+    text-align: center;
+    gap: 20px;
+    z-index: 1000;
+  }
+
+  /* Show nav links when menu is toggled */
+  #menu-toggle:checked ~ nav .nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+}
