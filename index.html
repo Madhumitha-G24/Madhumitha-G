@@ -23,9 +23,10 @@
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
+      
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -132,12 +133,20 @@ As a learner and a builder at heart, I’m passionate about web technologies and
       <p>GitHub: <a href="https://github.com/Madhumitha-G24">Madhumitha-G24</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/madhumitha-g24/">madhumitha-g24</a></p>
     </div>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+   <section id="contact" class="section">
+  <form action="https://formsubmit.co/madhumithaganesan24@gmail.com" method="POST" class="contact-form">
+    <!-- Optional Hidden Fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+
   </section>
 
   <!-- Footer -->
@@ -179,5 +188,28 @@ As a learner and a builder at heart, I’m passionate about web technologies and
       "retina_detect": true
     });
   </script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  ScrollReveal({
+    reset: false,
+    distance: '60px',
+    duration: 1000,
+    delay: 200
+  });
+
+  ScrollReveal().reveal('.section', {
+    origin: 'bottom',
+    interval: 200
+  });
+
+  ScrollReveal().reveal('.hero-text', {
+    origin: 'left'
+  });
+
+  ScrollReveal().reveal('.hero-img', {
+    origin: 'right'
+  });
+</script>
+
 </body>
 </html>
