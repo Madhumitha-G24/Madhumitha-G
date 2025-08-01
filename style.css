@@ -16,15 +16,13 @@ body {
 
 /* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background: #000;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* or higher */
 }
+
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -136,25 +134,65 @@ nav ul li a:hover {
 }
 
 /* Projects */
-.projects-grid {
+.project-section {
+  padding: 80px 20px;
+  background: #000;
+  color: #00fff2;
+  text-align: center;
+}
+
+.project-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00fff2;
+}
+
+.project-subheading {
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
+  color: #00fff2;
+  text-decoration: underline;
+}
+
+.project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .project-card {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 255, 242, 0.1);
+  transition: transform 0.3s ease;
 }
+
 .project-card:hover {
-  background: #00f5d4;
-  color: #000;
+  transform: translateY(-10px);
 }
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
 .project-card h3 {
-  color: #02f3d3;
-  margin-bottom: 10px;
+  margin: 15px 0 5px;
+  color: #00fff2;
+  font-size: 1.3rem;
 }
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  padding: 0 15px 20px;
+}
+
+
 
 /* Education */
 .timeline-container {
@@ -434,4 +472,19 @@ footer {
   header {
     flex-wrap: wrap;
   }
+}
+#projects {
+  position: relative;
+  background: transparent;
+  z-index: 1;
+  padding: 80px 0;
+  color: white; /* if dark theme */
+}
+
+#projects::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6); /* optional overlay */
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
 }
